@@ -155,7 +155,7 @@ export default function HiluxFormFactoryTest (inputJSON, formName) {
       // now jam the target Group right after the original group index (so, at targetGroupIndex+1)
       jsonData.fieldOrder.splice(targetGroupIndex+1,0, newGroupToInject)
       
-      console.log("full JSON is : ", JSON.stringify(jsonData) );
+      //console.log("full JSON is : ", JSON.stringify(jsonData) );
       
     } else {
 
@@ -191,7 +191,7 @@ export default function HiluxFormFactoryTest (inputJSON, formName) {
     } 
   
     if ( (fieldJSON[0].fieldType == "text") || (fieldJSON[0].fieldType == "number") || (fieldJSON[0].fieldType == "textarea")  ) {    
-      console.log("adding change handler for - ", customizedFieldID);  
+      //console.log("adding change handler for - ", customizedFieldID);  
       hiluxComponent = (
         <HiluxFormInput
           name= {fieldJSON[0].fieldName.en}
@@ -375,7 +375,7 @@ export default function HiluxFormFactoryTest (inputJSON, formName) {
   function loadServerForm(handleChange, values){
     
     setFormPrepInProcess(true);
-    console.log("loadServerForm called ")
+    //console.log("loadServerForm called ")
     //generate a core for this form that we can later wrap with Formik
     //adjust ARJRE json (tag the first idex of all  Dynamic blocks - so we can increment other blocks if the user adds em)
     reformatJSON();      
@@ -473,7 +473,7 @@ export default function HiluxFormFactoryTest (inputJSON, formName) {
                 modifiedFieldID = fieldNamesSet[fieldCounter].fieldID;
                 baseFieldID = modifiedFieldID.split('_')[0];
                 var fieldJSON = allFields.filter(obj => { return obj.fieldID == baseFieldID })              
-                console.log("Modified Field ID - ", modifiedFieldID)                
+                //console.log("Modified Field ID - ", modifiedFieldID)                
                 //console.log( "Adding to multi: ", allGroups[groupName].row, " - id: ", fieldNamesSet[fieldCounter].fieldID , " label: ", fieldJSON[0].fieldName.en, " type: ", fieldJSON[0].fieldType )
                 // (3a) call the formik element generator above to return a an appropriate component and add it to the component stack (track that this is a dynamic multiple field)
                 let currComponent = formikElementGenerator(fieldJSON, modifiedFieldID, formContentValues, handleChange );
